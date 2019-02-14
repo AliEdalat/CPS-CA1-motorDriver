@@ -29,32 +29,6 @@ void setup() {
 }
 
 void loop() {
-  //  for (pos = 0; pos <= 180; pos += 1) { // goes from 0 degrees to 180 degrees
-  //    // in steps of 1 degree
-  //    myservo.write(pos);              // tell servo to go to position in variable 'pos'
-  //    delay(150);                       // waits 15ms for the servo to reach the position
-  //    Serial.print(pos);
-  //    Serial.println();
-  //    if (pos == 45)
-  //      delay(1000);
-  //     if (pos == 40)
-  //      delay(1000);
-  //  }
-  //  for (pos = 180; pos >= 0; pos -= 1) { // goes from 180 degrees to 0 degrees
-  //    myservo.write(pos);              // tell servo to go to position in variable 'pos'
-  //    delay(150);                       // waits 15ms for the servo to reach the position
-  //    Serial.print(pos);
-  //    Serial.println();
-  //  }
-
-//
-//  digitalWrite(servo_pin, HIGH);
-//  delayMicroseconds(1485);
-//  digitalWrite(servo_pin, LOW);
-//  delayMicroseconds(18515);  
-  
-  
-
   
   value = digitalRead(servoInputRotateClockwise);
   if (value == HIGH)
@@ -72,8 +46,6 @@ void loop() {
 
 
   Serial.print(pos);
-  Serial.print(" fuckk");
   Serial.println();
   myservo.write(pos);
-//    myservo.write(1450);
 }
