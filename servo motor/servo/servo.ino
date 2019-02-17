@@ -8,7 +8,7 @@
 */
 
 #include <Servo.h>
-
+int POSITION_CHANGE = 4;
 int servo_pin = 9;
 int servoInputRotateClockwise = 2;
 int servoInputRotateCounterClockwise = 4;
@@ -34,18 +34,18 @@ void loop() {
   if (value == HIGH)
   {
     while ( digitalRead(servoInputRotateClockwise) == HIGH ) delay(10);
-    pos -= 2;
+    pos -= POSITION_CHANGE;
   }
 
   value = digitalRead(servoInputRotateCounterClockwise);
   if (value == HIGH)
   {
     while ( digitalRead(servoInputRotateCounterClockwise) == HIGH ) delay(10);
-    pos += 2;
+    pos += POSITION_CHANGE;
   }
 
-
+  myservo.write(map(pos, 0, 180, 1000, 2000));
   Serial.print(pos);
   Serial.println();
-  myservo.write(pos);
+  
 }
